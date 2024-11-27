@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">`
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensin Gold Mines</title>
     <!-- Link to the CSS file -->
     <link rel="stylesheet" href="css/Mensin.css">
+    <!-- Google Maps API with API Key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR6Kskz3jXiji8A7V775WYc8QOn-QAQQQ&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            // The location of Mensin Gold Mines
+            const mensinGoldMines = { lat: 5.307, lng: -1.993 };
+            // The map, centered at Mensin Gold Mines
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: mensinGoldMines,
+            });
+            // The marker, positioned at Mensin Gold Mines
+            const marker = new google.maps.Marker({
+                position: mensinGoldMines,
+                map: map,
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -40,9 +58,9 @@
     <section id="mines" class="section">
         <h2>Our Mines</h2>
         <div class="mines-gallery">
-            <img src="images/mine1.jpg" alt="Mine 1">
-            <img src="images/mine2.jpg" alt="Mine 2">
-            <img src="images/mine3.jpg" alt="Mine 3">
+            <img src="C:/Users/User1/Pictures/Bib.JPG" alt="Bib">
+            <img src="C:/Users/User1/Pictures/Bibiani.JPG" alt="Bibiani">
+            <img src="C:/Users/User1/Pictures/B.JPG" alt="B">
         </div>
         <p>Explore our mines located in top gold-producing regions around the world.</p>
     </section>
@@ -64,12 +82,27 @@
     <section id="contact" class="section">
         <h2>Contact Us</h2>
         <p>For inquiries, please reach out to us. We’re here to answer your questions.</p>
+        <p>Email: <a href="mailto:info@mensingoldmines.com">info@mensingoldmines.com</a></p>
         <form action="#" method="post" class="contact-form">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
             <textarea placeholder="Your Message" required></textarea>
             <button type="submit" class="btn-primary">Send Message</button>
         </form>
+    </section>
+
+    <!-- Google Map Section -->
+    <section id="location" class="section">
+        <h2>Our Location</h2>
+        <div id="map" style="height: 400px; width: 100%;"></div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="section">
+        <h2>Watch Our Video</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tHMd3hsf-j8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </section>
 
     <!-- Footer -->
